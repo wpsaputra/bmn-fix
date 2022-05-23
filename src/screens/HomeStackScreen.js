@@ -129,7 +129,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-around',
-        position: "absolute"
       },
       middleIcon: {
         bottom: 18,
