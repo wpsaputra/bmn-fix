@@ -7,7 +7,8 @@ import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNat
 import AppIcon, { Icons } from '../components/AppIcon';
 import LinearGradient from 'react-native-linear-gradient';
 
-const HomeScreen = () => {
+
+const HomeScreen = ({navigation}) => {
     // const modalRef = useRef(null);
     const modalRef = React.useContext(AppContext);
 
@@ -17,10 +18,6 @@ const HomeScreen = () => {
   
     return (
       <>
-        {/* <TouchableOpacity onPress={onOpen}>
-          <Text>Open the modal</Text>
-        </TouchableOpacity> */}
-        {/* <LinearGradient useAngle={true} angle={45} angleCenter={{ x: 0.5, y: 0.5}} colors={['tomato', '#f9d423']} style={styles.linearGradient}> */}
         <LinearGradient useAngle={true} angle={45} angleCenter={{ x: 0.5, y: 0.5}} colors={['#d8303d', '#e97007']} style={styles.linearGradient}>
           <View>
             <Text style={styles.header}>Welcome to</Text>
@@ -30,7 +27,7 @@ const HomeScreen = () => {
             <TouchableOpacity>
               <AppIcon name={"notifications-outline"} type={Icons.Ionicons} size={24} color={"white"} />
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>{navigation.navigate("Login")}}>
               <AppIcon name={"person-outline"} type={Icons.Ionicons} size={24} color={"white"} />
             </TouchableOpacity>
           </View>
@@ -67,6 +64,7 @@ const HomeScreen = () => {
               </View>
             </Modalize>
         </Portal>
+        
       </>
     );
 }
